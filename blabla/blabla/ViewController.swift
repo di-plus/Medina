@@ -10,9 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
+    @IBOutlet weak var viewContainer: UIView!
+    @IBOutlet weak var buttonNext: UIButton!
+    @IBAction func onTap(_ sender: Any) {
+    }
+    
+        override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
 

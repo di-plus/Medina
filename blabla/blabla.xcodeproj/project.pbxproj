@@ -13,6 +13,9 @@
 		04B2D37324571C9500AD1CE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B2D37124571C9500AD1CE8 /* Main.storyboard */; };
 		04B2D37524571C9800AD1CE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04B2D37424571C9800AD1CE8 /* Assets.xcassets */; };
 		04B2D37824571C9800AD1CE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B2D37624571C9800AD1CE8 /* LaunchScreen.storyboard */; };
+		04B2D390245F05B700AD1CE8 /* CarouselItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04B2D38F245F05B700AD1CE8 /* CarouselItem.xib */; };
+		04B2D392245F0C1900AD1CE8 /* CarouselItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B2D391245F0C1800AD1CE8 /* CarouselItem.swift */; };
+		04B2D395245F1ACB00AD1CE8 /* CarouselPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B2D394245F1ACB00AD1CE8 /* CarouselPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		04B2D37424571C9800AD1CE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04B2D37724571C9800AD1CE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04B2D37924571C9800AD1CE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04B2D38F245F05B700AD1CE8 /* CarouselItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarouselItem.xib; sourceTree = "<group>"; };
+		04B2D391245F0C1800AD1CE8 /* CarouselItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselItem.swift; sourceTree = "<group>"; };
+		04B2D394245F1ACB00AD1CE8 /* CarouselPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CarouselPageViewController.swift; path = blabla/CarouselPageViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +62,10 @@
 		04B2D36A24571C9500AD1CE8 /* blabla */ = {
 			isa = PBXGroup;
 			children = (
+				04B2D393245F13BE00AD1CE8 /* CarouselPage */,
 				04B2D36B24571C9500AD1CE8 /* AppDelegate.swift */,
 				04B2D36D24571C9500AD1CE8 /* SceneDelegate.swift */,
+				04B2D394245F1ACB00AD1CE8 /* CarouselPageViewController.swift */,
 				04B2D36F24571C9500AD1CE8 /* ViewController.swift */,
 				04B2D37124571C9500AD1CE8 /* Main.storyboard */,
 				04B2D37424571C9800AD1CE8 /* Assets.xcassets */,
@@ -65,6 +73,15 @@
 				04B2D37924571C9800AD1CE8 /* Info.plist */,
 			);
 			path = blabla;
+			sourceTree = "<group>";
+		};
+		04B2D393245F13BE00AD1CE8 /* CarouselPage */ = {
+			isa = PBXGroup;
+			children = (
+				04B2D391245F0C1800AD1CE8 /* CarouselItem.swift */,
+				04B2D38F245F05B700AD1CE8 /* CarouselItem.xib */,
+			);
+			path = CarouselPage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +144,7 @@
 			files = (
 				04B2D37824571C9800AD1CE8 /* LaunchScreen.storyboard in Resources */,
 				04B2D37524571C9800AD1CE8 /* Assets.xcassets in Resources */,
+				04B2D390245F05B700AD1CE8 /* CarouselItem.xib in Resources */,
 				04B2D37324571C9500AD1CE8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,7 +158,9 @@
 			files = (
 				04B2D37024571C9500AD1CE8 /* ViewController.swift in Sources */,
 				04B2D36C24571C9500AD1CE8 /* AppDelegate.swift in Sources */,
+				04B2D392245F0C1900AD1CE8 /* CarouselItem.swift in Sources */,
 				04B2D36E24571C9500AD1CE8 /* SceneDelegate.swift in Sources */,
+				04B2D395245F1ACB00AD1CE8 /* CarouselPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
