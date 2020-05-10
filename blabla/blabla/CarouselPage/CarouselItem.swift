@@ -5,9 +5,9 @@ class CarouselItem: UIView {
     
     static let CAROUSEL_ITEM_NIB = "CarouselItem"
     
-    @IBOutlet var viewContent: UIView!
-    @IBOutlet var viewBackground: UIView!
-    @IBOutlet var labelTitle: UILabel!
+    @IBOutlet private var viewContent: UIView!
+    @IBOutlet private var viewBackground: UIView!
+    @IBOutlet private var labelTitle: UILabel!
     
     override init(frame: CGRect) {
         super.init(frame: frame)

@@ -8,7 +8,7 @@
 import UIKit
 
 class CarouselPageViewController: UIPageViewController {
-    var items: [UIViewController] = []
+    private var items: [UIViewController] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +23,9 @@ class CarouselPageViewController: UIPageViewController {
             setViewControllers([firstViewController], direction: .forward, animated: true, completion: nil)
         }
     }
-    
+}
+
+private extension CarouselPageViewController {
     func decoratePageControl() {
         let pc = UIPageControl.appearance(whenContainedInInstancesOf: [CarouselPageViewController.self])
         pc.currentPageIndicatorTintColor = .systemPink
@@ -47,7 +49,6 @@ class CarouselPageViewController: UIPageViewController {
         
         return newViewControllet
     }
-    
 }
     
     //MARK: - DataSouse
