@@ -8,7 +8,7 @@
 import UIKit
 
 class CarouselPageViewController: UIPageViewController {
-    fileprivate var items: [UIViewController] = []
+    var items: [UIViewController] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,84 +17,87 @@ class CarouselPageViewController: UIPageViewController {
         decoratePageControl()
         populateItems()
         
+        self.view.backgroundColor = .blue
+        
         if let firstViewController = items.first {
             setViewControllers([firstViewController], direction: .forward, animated: true, completion: nil)
         }
     }
     
-    fileprivate func decoratePageControl() {
+    func decoratePageControl() {
         let pc = UIPageControl.appearance(whenContainedInInstancesOf: [CarouselPageViewController.self])
         pc.currentPageIndicatorTintColor = .systemPink
         pc.pageIndicatorTintColor = .gray
+
     }
     
-    fileprivate func populateItems(){
-        let text = ["WELCOME" , "ПРИВЕТ", "ALOHA"]
-        let backgroundColor:[UIColor] = [.blue , .red , .cyan]
+    func populateItems(){
+        let textContent = ["WELCOME" , "ПРИВЕТ", "ALOHA"]
+        let backgroundColor:[UIColor] = [.blue , .red , .magenta]
         
-        for (index, t) in text.enumerated() {
-            let c = createCarouselItemController(with: t, color: backgroundColor[index])
-            items.append(c)
+        for (index, text) in textContent.enumerated() {
+            let pageItem = createCarouselItemController(with: text, color: backgroundColor[index])
+            items.append(pageItem)
         }
     }
     
-    fileprivate func createCarouselItemController(with titleText: String?, color: UIColor?) -> UIViewController{
-        let c = UIViewController()
-        c.view = CarouselItem(titleText: titleText, background: color)
+    func createCarouselItemController(with titleText: String?, color: UIColor?) -> UIViewController{
+        let newViewControllet = UIViewController()
+        newViewControllet.view = CarouselItem(titleText: titleText, background: color)
         
-        return c
+        return newViewControllet
     }
     
 }
     
     //MARK: - DataSouse
     
-    extension CarouselPageViewController: UIPageViewControllerDataSource {
+extension CarouselPageViewController: UIPageViewControllerDataSource {
         
-        func pageViewController(_: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-            guard let viewControllerIndex = items.firstIndex(of: viewController) else {
+    func pageViewController(_: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        guard let viewControllerIndex = items.firstIndex(of: viewController) else {
                 return nil
             }
             
-            let previousIndex = viewControllerIndex - 1
+        let previousIndex = viewControllerIndex - 1
             
-            guard previousIndex >= 0 else {
+        guard previousIndex >= 0 else {
                 return items.last
-            }
+        }
             
-            guard items.count > previousIndex else {
+        guard items.count > previousIndex else {
                 return nil
-            }
-            
-            return items[previousIndex]
         }
-
-        func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-            guard let viewControllerIndex = items.firstIndex(of: viewController) else {
-                return nil
-            }
             
-            let nextIndex = viewControllerIndex + 1
-            guard items.count != nextIndex else {
-                return items.first
-            }
-            
-            guard items.count > nextIndex else {
-                return nil
-            }
-            
-            return items[nextIndex]
-
-        }
-        
-        func presentationCount(for _: UIPageViewController) -> Int {
-            return items.count
-        }
-        
-        func presentationIndex(for _: UIPageViewController) -> Int {
-            guard let firstViewController = viewControllers?.first, let firstViewControllerIndex = items.firstIndex(of: firstViewController) else {
-                return 0
-            }
-            return firstViewControllerIndex
-        }
+        return items[previousIndex]
     }
+
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        guard let viewControllerIndex = items.firstIndex(of: viewController) else {
+                return nil
+        }
+            
+        let nextIndex = viewControllerIndex + 1
+        guard items.count != nextIndex else {
+                return items.first
+        }
+            
+        guard items.count > nextIndex else {
+                return nil
+        }
+            
+        return items[nextIndex]
+
+    }
+        
+    func presentationCount(for _: UIPageViewController) -> Int {
+        return items.count
+    }
+        
+    func presentationIndex(for _: UIPageViewController) -> Int {
+        guard let firstViewController = viewControllers?.first, let firstViewControllerIndex = items.firstIndex(of: firstViewController) else {
+            return 0
+        }
+        return firstViewControllerIndex
+    }
+}

@@ -16,34 +16,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Md9-5a-ggg">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="751"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <connections>
                                     <segue destination="5Cj-tK-ac9" kind="embed" id="zvs-yJ-Jtw"/>
                                 </connections>
                             </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O87-jp-XCX">
-                                <rect key="frame" x="62" y="786" width="291" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="NEXT">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="onTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nnv-Fu-igs"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Md9-5a-ggg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1zT-7H-dsh"/>
                             <constraint firstItem="Md9-5a-ggg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="LC4-Na-QXO"/>
                             <constraint firstItem="Md9-5a-ggg" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-44" id="kLk-dx-pSf"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Md9-5a-ggg" secondAttribute="bottom" constant="111" id="tZB-bQ-7f6"/>
                             <constraint firstItem="Md9-5a-ggg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wYO-XQ-FKs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="buttonNext" destination="O87-jp-XCX" id="T7o-Ol-3cj"/>
                         <outlet property="viewContainer" destination="Md9-5a-ggg" id="6aY-TE-Yhy"/>
                     </connections>
                 </viewController>
