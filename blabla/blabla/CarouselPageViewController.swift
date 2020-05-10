@@ -62,7 +62,7 @@ extension CarouselPageViewController: UIPageViewControllerDataSource {
         let previousIndex = viewControllerIndex - 1
             
         guard previousIndex >= 0 else {
-                return items.last
+                return nil
         }
             
         guard items.count > previousIndex else {
@@ -76,18 +76,14 @@ extension CarouselPageViewController: UIPageViewControllerDataSource {
         guard let viewControllerIndex = items.firstIndex(of: viewController) else {
                 return nil
         }
-            
         let nextIndex = viewControllerIndex + 1
         guard items.count != nextIndex else {
-                return items.first
+            return nil
         }
-            
         guard items.count > nextIndex else {
                 return nil
         }
-            
         return items[nextIndex]
-
     }
         
     func presentationCount(for _: UIPageViewController) -> Int {
