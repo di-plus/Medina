@@ -31,7 +31,6 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
-                        <constraint firstItem="8x7-19-Qm1" firstAttribute="top" secondItem="ftM-HT-JWU" secondAttribute="top" constant="438" id="4HF-x8-KuU"/>
                         <constraint firstItem="8x7-19-Qm1" firstAttribute="centerY" secondItem="ftM-HT-JWU" secondAttribute="centerY" id="EDP-e5-phz"/>
                         <constraint firstItem="8x7-19-Qm1" firstAttribute="centerX" secondItem="ftM-HT-JWU" secondAttribute="centerX" id="qNc-fK-f8I"/>
                     </constraints>
