@@ -8,7 +8,7 @@
         <!--Carousel Page View Controller-->
         <scene sceneID="0e1-AW-Z8s">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="5Cj-tK-ac9" customClass="CarouselPageViewController" customModule="blabla" customModuleProvider="target" sceneMemberID="viewController">
+                <pageViewController storyboardIdentifier="Carousel" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="5Cj-tK-ac9" customClass="CarouselPageViewController" customModule="blabla" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Neg-Fs-EIH"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DAP-ac-Zh1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
