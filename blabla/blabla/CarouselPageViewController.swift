@@ -7,9 +7,11 @@
 //
 import UIKit
 
-class CarouselPageViewController: UIPageViewController, CaroudelItemDelegate {
+class CarouselPageViewController: UIPageViewController, CarouselItemDelegate {
     
     private var items: [UIViewController] = []
+    weak var delegateController: CarouselPageViewControllerDelegate?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +27,7 @@ class CarouselPageViewController: UIPageViewController, CaroudelItemDelegate {
         }
     }
     func carouselView(view: CarouselItem, didTouchCompleteButton button: UIButton) {
-        print("ok")
+        delegateController?.jumpToLogInPage()
     }
 }
 
@@ -103,4 +105,8 @@ extension CarouselPageViewController: UIPageViewControllerDataSource {
         }
         return firstViewControllerIndex
     }
+}
+
+protocol CarouselPageViewControllerDelegate: class {
+    func jumpToLogInPage()
 }

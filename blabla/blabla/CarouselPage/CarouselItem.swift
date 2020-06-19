@@ -4,7 +4,7 @@ import UIKit
 class CarouselItem: UIView {
     
     static let CAROUSEL_ITEM_NIB = "CarouselItem"
-    weak var delegate: CaroudelItemDelegate?
+    weak var delegate: CarouselItemDelegate?
     
     @IBOutlet private var viewContent: UIView!
     @IBOutlet private var viewBackground: UIView!
@@ -35,6 +35,6 @@ class CarouselItem: UIView {
     }
 }
 
-protocol CaroudelItemDelegate: class {
+protocol CarouselItemDelegate: class {
     func carouselView(view: CarouselItem, didTouchCompleteButton button: UIButton)
 }

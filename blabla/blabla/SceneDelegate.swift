@@ -8,14 +8,13 @@
 
 import UIKit
 
-class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+class SceneDelegate: UIResponder, UIWindowSceneDelegate,CarouselPageViewControllerDelegate {
 
     var window: UIWindow?
     var mainNavigationController: UINavigationController?
     var onBoardCarousel: CarouselPageViewController?
     
-
-
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
 
         guard let windowScene = (scene as? UIWindowScene) else { return }
@@ -26,6 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let st = UIStoryboard(name: "Main", bundle: nil)
         onBoardCarousel = st.instantiateViewController(identifier: "Carousel")
+        onBoardCarousel?.delegateController = self
         
                 
         if let carousel = onBoardCarousel{
@@ -37,6 +37,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = mainNavigationController
         window?.rootViewController?.view.backgroundColor = .green
         window?.makeKeyAndVisible()
+    }
+    
+    func jumpToLogInPage() {
+        
+        let st = UIStoryboard(name: "Main", bundle: nil)
+        let loginViewController = st.instantiateViewController(identifier: "LoginViewController")
+        
+        mainNavigationController?.pushViewController(loginViewController, animated: true)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
