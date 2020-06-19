@@ -28,6 +28,17 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iq8-1x-orc">
+                            <rect key="frame" x="368" y="52" width="30" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <accessibility key="accessibilityConfiguration" label="Skip"/>
+                            <state key="normal" title="Skip">
+                                <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
+                            </state>
+                            <connections>
+                                <action selector="skipButton:" destination="-1" eventType="touchUpInside" id="0fo-bM-Sp5"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>

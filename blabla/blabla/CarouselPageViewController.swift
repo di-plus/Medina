@@ -7,7 +7,8 @@
 //
 import UIKit
 
-class CarouselPageViewController: UIPageViewController {
+class CarouselPageViewController: UIPageViewController, CaroudelItemDelegate {
+    
     private var items: [UIViewController] = []
 
     override func viewDidLoad() {
@@ -17,11 +18,14 @@ class CarouselPageViewController: UIPageViewController {
         decoratePageControl()
         populateItems()
         
-        self.view.backgroundColor = .blue
+        self.view.backgroundColor = .red
         
         if let firstViewController = items.first {
             setViewControllers([firstViewController], direction: .forward, animated: true, completion: nil)
         }
+    }
+    func carouselView(view: CarouselItem, didTouchCompleteButton button: UIButton) {
+        print("ok")
     }
 }
 
@@ -45,8 +49,10 @@ private extension CarouselPageViewController {
     
     func createCarouselItemController(with titleText: String?, color: UIColor?) -> UIViewController{
         let newViewControllet = UIViewController()
-        newViewControllet.view = CarouselItem(titleText: titleText, background: color)
-        
+        var view: CarouselItem
+        view = CarouselItem(titleText: titleText, background: color)
+        view.delegate = self
+        newViewControllet.view = view
         return newViewControllet
     }
 }
