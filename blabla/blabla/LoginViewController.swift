@@ -15,39 +15,36 @@ class LoginViewController: UIViewController {
     @IBAction func loginButton(_ sender: UIButton) {
         revisionTextField()
     }
+    private let validator: FieldValidator = FieldValidator()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     func revisionTextField()  {
-        //print(emailTextField.text ?? "none",passwordTextField.text ?? "none")
+       
+        let emailIsOk: Bool = validator.isValidEmail(emailTextField.text!)
+        let passwordIsOk: Bool = validator.isValidPassword(passwordTextField.text!)
         
-        //print(isValidEmail(emailTextField.text!))
-        //print(isEmailLenghtOk(emailTextField.text!))
-        //print(isValidPassword(passwordTextField.text!))
+        guard emailIsOk == true else {
+            pushAlert("Поле E-mail должно быть заполнено корректно.")
+            return
+        }
+        guard passwordIsOk == true else {
+            pushAlert("Пароль должен состоять из 8-50 символов включительно, содержать 1 цифру, 1 специальный символ и 1 заглавную букву.")
+            return
+        }
+
+        print("ok")
+
 
     }
     
-    func isValidEmail(_ email: String) -> Bool {
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,5}"
+    func pushAlert(_ rules: String){
+        let alert = UIAlertController(title: "Поверьте правильность ввода данных", message: rules, preferredStyle: .alert)
 
-        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        return emailPred.evaluate(with: email)
-    }
-    func isEmailLenghtOk(_ email: String) -> Bool {
-        if email.count > 0 && email.count<=250  {
-            return true
-        } else{
-           return false
-        }
-    }
-    func isValidPassword(_ password : String) -> Bool{
-        let predicate = NSPredicate(format: "SELF MATCHES %@","^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9]).{8,50}$")
+        alert.addAction(UIAlertAction(title: "ОК", style: .default, handler: nil))
 
-        return predicate.evaluate(with: password)
+        self.present(alert, animated: true)
     }
-
 }
