@@ -12,65 +12,50 @@ class RegistrationViewController: UIViewController {
     
     private let validator = FieldValidator()
     
-    #warning("All IBOutlets should be private")
-    @IBOutlet weak var nameField: UITextField!
-    @IBOutlet weak var secondNameField: UITextField!
-    @IBOutlet weak var emailField: UITextField!
-    @IBOutlet weak var passwordField: UITextField!
-    @IBOutlet weak var repeatPasswordField: UITextField!
+    @IBOutlet private weak var nameField: UITextField!
+    @IBOutlet private weak var secondNameField: UITextField!
+    @IBOutlet private weak var emailField: UITextField!
+    @IBOutlet private weak var passwordField: UITextField!
+    @IBOutlet private weak var repeatPasswordField: UITextField!
     
-    #warning("Need check comments from previos class. Also wrong name of the function(notCamelCaseRule)")
-    @IBAction func JoinButtonAction(_ sender: UIButton) {
-        revisionTextField()
+    @IBAction func joinButtonAction(_ sender: UIButton) {
+        validateTextFields()
     }
     
-    #warning("Empty func. We could delete it.")
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
-    func revisionTextField() {
+    func validateTextFields() {
         
-        #warning("Should rename constants "isSomethingValid"")
-        let nameIsOk: Bool = validator.isValidName(nameField.text!)
-        let secondNameIsOk: Bool = validator.isValidSecondName(secondNameField.text!)
-        let emailIsOk: Bool = validator.isValidEmail(emailField.text!)
-        let passwordIsOk: Bool = validator.isValidPassword(passwordField.text!)
-        let repeatPasswordIsOk: Bool = validator.isRepeatPasswordCorrect(passwordField.text!, repeatPassword: repeatPasswordField.text!)
+        let isNameValid: Bool = validator.isNameValid(nameField.text!)
+        let isSecondNameValid: Bool = validator.isSecondNameValid(secondNameField.text!)
+        let isEmailValid: Bool = validator.isEmailValid(emailField.text!)
+        let isPasswordValid: Bool = validator.isPasswordValid(passwordField.text!)
+        let isRepeatPasswordValid: Bool = validator.isRepeatPasswordValid(passwordField.text!, repeatPassword: repeatPasswordField.text!)
         
-        guard nameIsOk == true else {
+        guard isNameValid == true else {
             pushAlert("Имя должно содержать от 5 до 25 символов.")
             return
         }
-        
-        guard secondNameIsOk == true else {
+        guard isSecondNameValid == true else {
             pushAlert("Фамилия должно содержать от 2 до 40 символов.")
             return
         }
-        
-        guard emailIsOk == true else {
+        guard isEmailValid == true else {
             pushAlert("Поле E-mail должно быть заполнено корректно.")
             return
         }
-        
-        guard passwordIsOk == true else {
+        guard isPasswordValid == true else {
             pushAlert("Пароль должен состоять из 8-50 символов включительно, содержать 1 цифру, 1 специальный символ и 1 заглавную букву.")
             return
         }
-        
-        guard repeatPasswordIsOk == true else {
+        guard isRepeatPasswordValid == true else {
             pushAlert("Введенные пароли не совпадают")
             return
         }
-
-        print("ok")
+        // do something if everything ok
     }
     
     func pushAlert(_ rules: String) {
-        
         let alert = UIAlertController(title: "Поверьте правильность ввода данных", message: rules, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "ОК", style: .default, handler: nil))
-
         self.present(alert, animated: true)
     }
 }

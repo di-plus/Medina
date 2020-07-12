@@ -120,6 +120,6 @@ extension CarouselPageViewController: UIPageViewControllerDataSource {
 }
 
 protocol CarouselPageViewControllerDelegate: class {
-    #warning("Need change function name. Minimum chabge "jump" to "go". Maximum this class protocol no nothing about login page, and function name should not contain words aboit it)")
+    #warning("Need change function name. Minimum chabge jump to go. Maximum this class protocol no nothing about login page, and function name should not contain words aboit it)")
     func jumpToLogInPage()
 }
