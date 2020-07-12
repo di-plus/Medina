@@ -20,9 +20,33 @@ class FieldValidator {
         }
     }
 
-    func isValidPassword(_ password : String) -> Bool{
+    func isValidPassword(_ password: String) -> Bool{
         let predicate = NSPredicate(format: "SELF MATCHES %@","^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9]).{8,50}$")
         return predicate.evaluate(with: password)
+    }
+    
+    func isValidName(_ name: String) -> Bool {
+        if name.count>4 && name.count<=25{
+            return true
+        } else{
+            return false
+        }
+    }
+    
+    func isValidSecondName(_ secondName: String) -> Bool {
+        if secondName.count>1 && secondName.count<=40{
+            return true
+        } else{
+            return false
+        }
+    }
+    
+    func isRepeatPasswordCorrect(_ password: String, repeatPassword: String) -> Bool {
+        if repeatPassword == password {
+            return true
+        } else{
+            return false
+        }
     }
 
 }
