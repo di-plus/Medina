@@ -28,7 +28,7 @@ class CarouselPageViewController: UIPageViewController, CarouselItemDelegate {
     }
     
     func carouselView(view: CarouselItem, didTouchCompleteButton button: UIButton) {
-        delegateController?.jumpToLogInPage()
+        delegateController?.goToNextScreen()
     }
 }
 
@@ -120,6 +120,5 @@ extension CarouselPageViewController: UIPageViewControllerDataSource {
 }
 
 protocol CarouselPageViewControllerDelegate: class {
-    #warning("Need change function name. Minimum chabge jump to go. Maximum this class protocol no nothing about login page, and function name should not contain words aboit it)")
-    func jumpToLogInPage()
+    func goToNextScreen()
 }

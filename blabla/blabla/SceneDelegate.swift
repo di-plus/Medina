@@ -39,7 +39,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate,CarouselPageViewControll
         window?.makeKeyAndVisible()
     }
     
-    func jumpToLogInPage() {
+    func goToNextScreen() {
         
         let st = UIStoryboard(name: "Main", bundle: nil)
         let loginViewController = st.instantiateViewController(identifier: "LoginViewController")
