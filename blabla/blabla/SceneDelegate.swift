@@ -8,12 +8,11 @@
 
 import UIKit
 
-class SceneDelegate: UIResponder, UIWindowSceneDelegate,CarouselPageViewControllerDelegate {
-
+class SceneDelegate: UIResponder, UIWindowSceneDelegate,CarouselPageViewControllerDelegate,LoginViewControllerDelegate {
+    
     var window: UIWindow?
     var mainNavigationController: UINavigationController?
     var onBoardCarousel: CarouselPageViewController?
-    
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
 
@@ -32,7 +31,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate,CarouselPageViewControll
             mainNavigationController = UINavigationController(rootViewController: carousel)
         }
         
-        
         mainNavigationController?.setNavigationBarHidden(true, animated: false)
         window?.rootViewController = mainNavigationController
         window?.rootViewController?.view.backgroundColor = .green
@@ -40,11 +38,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate,CarouselPageViewControll
     }
     
     func goToNextScreen() {
-        
-        let st = UIStoryboard(name: "Main", bundle: nil)
-        let loginViewController = st.instantiateViewController(identifier: "LoginViewController")
-        
-        mainNavigationController?.pushViewController(loginViewController, animated: true)
+        let loginViewController : LoginViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "LoginViewController")
+        mainNavigationController?.viewControllers = [loginViewController]
+        loginViewController.delegateController = self
+    }
+    func goToMainScreen() {
+        let mainTabBarViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "AppMainScreen")
+        mainNavigationController?.viewControllers = [mainTabBarViewController]
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
