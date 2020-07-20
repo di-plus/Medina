@@ -21,7 +21,8 @@ class LoginViewController: UIViewController {
     private let titleTextForAlert: String = "Поверьте правильность ввода данных"
     
     @IBAction func loginButton(_ sender: UIButton) {
-        validateTextFields()
+        delegateController?.goToMainScreen()
+        //validateTextFields()
     }
     
     func validateTextFields()  {
@@ -43,13 +44,8 @@ class LoginViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "ОК", style: .default, handler: nil))
         self.present(alert, animated: true)
     }
-    
-    func completeLoginFlowSuccess() {
-        let mainNavigationController = self.navigationController
-        let mainTabBarViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "AppMainScreen")
-        mainNavigationController?.viewControllers = [mainTabBarViewController]
-    }
 }
+
 protocol LoginViewControllerDelegate: class {
     func goToMainScreen()
 }

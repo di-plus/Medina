@@ -15,9 +15,13 @@
 		04B2D390245F05B700AD1CE8 /* CarouselItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04B2D38F245F05B700AD1CE8 /* CarouselItem.xib */; };
 		04B2D392245F0C1900AD1CE8 /* CarouselItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B2D391245F0C1800AD1CE8 /* CarouselItem.swift */; };
 		04B2D395245F1ACB00AD1CE8 /* CarouselPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B2D394245F1ACB00AD1CE8 /* CarouselPageViewController.swift */; };
+		04BF268F24C422FD00DC871C /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF268E24C422FD00DC871C /* CustomTabBarController.swift */; };
 		04C1EF7824AB4BE400663E57 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C1EF7724AB4BE400663E57 /* LoginViewController.swift */; };
 		04C1EF7A24B187A700663E57 /* FieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C1EF7924B187A700663E57 /* FieldValidator.swift */; };
 		04C1EF7C24BAF67600663E57 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C1EF7B24BAF67600663E57 /* RegistrationViewController.swift */; };
+		04F4C8E924C575A500B093F2 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F4C8E824C575A500B093F2 /* LibraryViewController.swift */; };
+		04F4C8EB24C575D100B093F2 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F4C8EA24C575D100B093F2 /* InfoViewController.swift */; };
+		04F4C8ED24C5760500B093F2 /* BrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F4C8EC24C5760500B093F2 /* BrowserViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,9 +35,13 @@
 		04B2D38F245F05B700AD1CE8 /* CarouselItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarouselItem.xib; sourceTree = "<group>"; };
 		04B2D391245F0C1800AD1CE8 /* CarouselItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselItem.swift; sourceTree = "<group>"; };
 		04B2D394245F1ACB00AD1CE8 /* CarouselPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CarouselPageViewController.swift; path = blabla/CarouselPageViewController.swift; sourceTree = SOURCE_ROOT; };
+		04BF268E24C422FD00DC871C /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		04C1EF7724AB4BE400663E57 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		04C1EF7924B187A700663E57 /* FieldValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldValidator.swift; sourceTree = "<group>"; };
 		04C1EF7B24BAF67600663E57 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		04F4C8E824C575A500B093F2 /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
+		04F4C8EA24C575D100B093F2 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		04F4C8EC24C5760500B093F2 /* BrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +85,10 @@
 				04C1EF7724AB4BE400663E57 /* LoginViewController.swift */,
 				04C1EF7B24BAF67600663E57 /* RegistrationViewController.swift */,
 				04C1EF7924B187A700663E57 /* FieldValidator.swift */,
+				04BF268E24C422FD00DC871C /* CustomTabBarController.swift */,
+				04F4C8E824C575A500B093F2 /* LibraryViewController.swift */,
+				04F4C8EA24C575D100B093F2 /* InfoViewController.swift */,
+				04F4C8EC24C5760500B093F2 /* BrowserViewController.swift */,
 			);
 			path = blabla;
 			sourceTree = "<group>";
@@ -162,12 +174,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04F4C8ED24C5760500B093F2 /* BrowserViewController.swift in Sources */,
 				04B2D36C24571C9500AD1CE8 /* AppDelegate.swift in Sources */,
 				04B2D392245F0C1900AD1CE8 /* CarouselItem.swift in Sources */,
+				04BF268F24C422FD00DC871C /* CustomTabBarController.swift in Sources */,
 				04B2D36E24571C9500AD1CE8 /* SceneDelegate.swift in Sources */,
+				04F4C8EB24C575D100B093F2 /* InfoViewController.swift in Sources */,
 				04C1EF7824AB4BE400663E57 /* LoginViewController.swift in Sources */,
 				04C1EF7C24BAF67600663E57 /* RegistrationViewController.swift in Sources */,
 				04B2D395245F1ACB00AD1CE8 /* CarouselPageViewController.swift in Sources */,
+				04F4C8E924C575A500B093F2 /* LibraryViewController.swift in Sources */,
 				04C1EF7A24B187A700663E57 /* FieldValidator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

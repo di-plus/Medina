@@ -42,9 +42,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate,CarouselPageViewControll
         mainNavigationController?.viewControllers = [loginViewController]
         loginViewController.delegateController = self
     }
+    
     func goToMainScreen() {
-        let mainTabBarViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "AppMainScreen")
-        mainNavigationController?.viewControllers = [mainTabBarViewController]
+        let mainTabBarController = CustomTabBarController()
+        
+        let libraryViewController = LibraryViewController()
+        let browserViewController = BrowserViewController()
+        let infoViewController = InfoViewController()
+    mainTabBarController.setViewControllers([libraryViewController,browserViewController,infoViewController], animated: true)
+        
+        mainNavigationController?.viewControllers = [mainTabBarController]
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
