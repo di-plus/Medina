@@ -49,10 +49,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate,CarouselPageViewControll
         let libraryViewController = LibraryViewController()
         let browserViewController = BrowserViewController()
         let infoViewController = InfoViewController()
-    mainTabBarController.setViewControllers([libraryViewController,browserViewController,infoViewController], animated: true)
         
+        libraryViewController.tabBarItem = UITabBarItem(title: "Library", image: UIImage(imageLiteralResourceName: "bookSimple"), tag: 0)
+        browserViewController.tabBarItem = UITabBarItem(title: "Browser", image: UIImage(imageLiteralResourceName: "folder"), tag: 1)
+        infoViewController.tabBarItem = UITabBarItem(title: "Info", image: UIImage(imageLiteralResourceName: "info"), tag: 2)
+    mainTabBarController.setViewControllers([libraryViewController,browserViewController,infoViewController], animated: true)
         mainNavigationController?.viewControllers = [mainTabBarController]
     }
+    
+
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.

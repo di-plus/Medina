@@ -13,8 +13,5 @@ class LibraryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .red
-        
-        let tabBarItem = UITabBarItem(title: "Library", image: UIImage(imageLiteralResourceName: "bookSimple"), tag: 0)
-        self.tabBarItem = tabBarItem
     }
 }

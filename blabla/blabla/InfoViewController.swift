@@ -9,13 +9,8 @@
 import UIKit
 
 class InfoViewController: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Info"
         self.view.backgroundColor = .white
-        
-        let tabBarItem = UITabBarItem(title: "Info", image: UIImage(imageLiteralResourceName: "info"), tag: 2)
-        self.tabBarItem = tabBarItem
     }
 }
